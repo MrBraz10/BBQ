@@ -1,0 +1,10 @@
+<div class="col-sm-6 col-lg-4">
+  <div class="card mt-2">
+    <div class="my-3 text-center">
+      <% photo_title = "#{render partial: 'photos/photo_title', locals: { photo: photo }}"%>
+      <%= link_to image_tag(photo.photo, class: 'img-fluid mb-2'),photo.photo,
+                  data: { lightbox: 'event-photos', title: photo_title } %>
+
+    </div>
+  </div>
+</div>

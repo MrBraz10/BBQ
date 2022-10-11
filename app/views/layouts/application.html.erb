@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= content_for?(:title) ? yield(:title) : "BBQ" %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV['YANDEX_MAP_API'] %>"
+          type="text/javascript"></script>
+</head>
+<body class="mb-5">
+<div class="navbar navbar-expand navbar-light bg-light">
+  <div class="container justify-content-start">
+    <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav nav-tabs">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= button_to t('app.profile'), current_user, method: :get,
+                                             class: 'btn btn-light' %></li>
+          <li class="nav-item"><%= button_to t('app.log_out'), destroy_user_session_path, method: :delete,
+                                             data: { turbo: false }, class: 'btn btn-light' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to t('app.enter'), new_user_session_path,
+                                           class: 'nav-link link-dark' %></li>
+          <li class="nav-item"><%= link_to t('app.registration'), new_user_registration_path,
+                                           class: 'nav-link link-dark' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<footer class="fixed-bottom bg-light text-center text-lg-start">
+  <div class="text-center p-3">
+    &copy; 2022
+    <a class="text-dark" href="https://github.com/MrBraz10"><%= t 'app.name' %></a>
+  </div>
+</footer>
+</body>
+</html>

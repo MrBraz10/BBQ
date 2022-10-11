@@ -1,0 +1,19 @@
+<div class="col">
+  <div class="card border-success border-2 mb-3 mt-5" style="max-width: 18rem;">
+    <div class="card-header"><%= link_to event.title, event_path(event),
+                                         class: 'nav-link link-success text-center text-uppercase' %></div>
+    <div class="card-body">
+      <p class="card-text"><%= event.description %></p>
+      <p class="card-text"><%= l event.datetime, format: :short %></p>
+      <p class="card-text"><%= event.address %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <% event.visitors.each do |user| %>
+          <%= link_to image_tag(user_avatar(user), style: 'width: 30px', class: 'rounded-circle',
+                        title: user.name), user_path(user) %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

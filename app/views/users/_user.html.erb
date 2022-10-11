@@ -1,0 +1,16 @@
+<div class="text-center">
+  <div class="rounded-circle mx-auto d-block">
+    <span>
+    <%= link_to image_tag(user_avatar(user), style: 'width: 30px', class: 'rounded-circle',
+                          title: user.name), user_path(user) %>
+    </span>
+  </div>
+
+  <span>
+    <% if request.path == user_path(user) %>
+      <%= user.name %>
+    <% else %>
+      <%= link_to user.name, user_path(user) %>
+    <% end %>
+  </span>
+</div>

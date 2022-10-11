@@ -1,0 +1,25 @@
+<%= form_for user, html: {multipart: true}, data: { turbo: false } do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {errors: user.errors} %>
+
+  <div class="mb-3">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="">
+    <%= f.label :avatar %>
+    <p><%= image_tag user_avatar(user), style: 'width: 130px', class: 'rounded-circle'%></p>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="my-4">
+    <%= f.submit t('users.save'), class: 'btn btn-success' %>
+    <%= t('users.or') %>
+    <%= link_to t('users.back'), :back %>
+  </div>
+<% end %>

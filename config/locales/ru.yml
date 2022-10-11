@@ -1,0 +1,171 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+      subscription: 'Подписка'
+      comment: 'Комментарий'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              existing_email: ' уже зарегистрирован. Войдите, чтобы подписаться.'
+              same_user: ' Извините, Вы не можете подписаться на свое событие.'
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        avatar: 'Аватарка'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+        pincode: 'Пин-код доступа'
+      subscription:
+        user_email: 'Email'
+        user_name: 'Имя'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя'
+      photo:
+        photo: 'Фотография'
+
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пин-код!'
+    users:
+      updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+
+  mailers:
+    subscr: "Новая подписка на %{title}"
+    comment: "Новый комментарий @ %{title}"
+
+  app:
+    name: 'ББкью'
+    profile: 'Профиль'
+    registration: 'Зарегистрироваться'
+    log_out: 'Выйти'
+    enter: 'Войти'
+
+  error:
+    one: 'В вашей форме %{count} ошибка'
+    few: 'В вашей форме %{count} ошибки'
+    many: 'В вашей форме %{count} ошибок'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комменатрий?'
+      delete: 'Удалить'
+    form:
+      send: 'Отправить'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      delete: 'Удалить'
+    form:
+      subscribe: 'Подписаться'
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата проведения'
+      owner: 'Организатор'
+      subject: 'Новый комментарий в %{event}'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата проведения'
+      owner: 'Организатор'
+      subject: 'Новая подписка на %{event}'
+    photo:
+      title: 'Новая фотография'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Дата проведения'
+      owner: 'Организатор'
+      subject: 'Добавлена новая фотография в %{event}'
+
+  devise:
+    password_edit: 'Сменить пароль'
+    password_lenght: 'Новый пароль: минимум %{pw} символов'
+    password_old: '(Если не хотите менять пароль - оставьте поле пустым)'
+    confirm_user: 'Вы точно хотите удалить свой профиль?'
+    forgot_password: 'Забыли пароль?'
+    password_confirmation: 'Подтверждение пароля'
+    current_password: 'Текущий пароль'
+    send: 'Отправить'
+    update: 'Обновить'
+    delete_profile: 'Удалить профиль'
+    delete: 'Удалить'
+    back: 'вернуться'
+    conf_wait: 'Currently waiting confirmation for:'
+    registration: 'Регистрация'
+    ready: 'Готово'
+    input: 'Вход'
+    enter: 'Войти'
+    remember_me: 'Запомнить меня'
+    registr: 'Зарегистрироваться'
+    forgot_passw: 'Забыли пароль?'
+    change_passw: 'Изменить пароль'
+    change_my_passw: 'Изменить мой пароль'
+
+  events:
+    confirm_event: 'Вы точно хотите удалить событие?'
+    no_photos: 'Пока никто не выложил фотографии :('
+    no_subscribers: 'На событие еще никто не подписался'
+    back: 'вернуться'
+    save: 'Сохранить'
+    confirm: 'Подтвердить'
+    edit_event: 'Редактирование события'
+    all_events: 'Все события'
+    new_event: 'Новое событие'
+    edit: 'Изменить'
+    delete_event: 'Удалить событие'
+    gallery: 'Галерея'
+    calling: 'Зовет:'
+    going: 'Пойдут:'
+    i_go: 'Я пойду:'
+    pincode_access: 'Доступ к данному событию только по пин-коду'
+    to_index: 'на главную'
+    pincode: 'Пин-код доступа'
+    or: 'или'
+
+  users:
+    no_event: 'Пользователь пока не организовал ни одного события'
+    back: 'вернуться'
+    save: 'Сохранить'
+    editing_profile: 'Редактирование профиля'
+    edit_profile: 'Редактировать профиль'
+    change_passw: 'Сменить пароль'
+    owner: 'Организовал:'
+    or: 'или'
+    
+  photos:
+    download: 'Загрузить'
+    delete: 'Удалить фото'
+    added: 'Добавил'
